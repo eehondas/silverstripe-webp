@@ -115,6 +115,8 @@ class WebpExtension extends \SilverStripe\ORM\DataExtension
                         srcset="' . $this->SrcSet(...$widths) . '"
                     >
                     <img
+                        width="' . $this->owner->Width . '"
+                        height="' . $this->owner->Height . '"
                         src="' . $this->owner->ScaleMaxWidth(array_sum($widths) / count($widths))->Url . '" '
                         . $params
                         . ' alt="' . $this->owner->Title . '"
@@ -151,6 +153,8 @@ class WebpExtension extends \SilverStripe\ORM\DataExtension
                         data-srcset="' . $this->SrcSet(...$widths) . '"
                     >
                     <img
+                        width="' . $this->owner->Width . '"
+                        height="' . $this->owner->Height . '"
                         data-src="' . $this->owner->ScaleMaxWidth(array_sum($widths) / count($widths))->Url . '" '
                         . $params
                         . ' alt="' . $this->owner->Title . '"
